@@ -1,11 +1,19 @@
 {
   "name": "news-bot",
   "version": "1.0.0",
-  "description": "",
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "C M Sanjay Krishna @MysterTech.com <=>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmsanjaykrishna/news-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cmsanjaykrishna/news-bot/issues"
+  },
+  "homepage": "https://github.com/cmsanjaykrishna/news-bot#readme",
+  "description": ""
 }
