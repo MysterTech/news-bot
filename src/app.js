@@ -81,35 +81,37 @@ function addArticles(total_pages) {
         // loop over each article to check and archive
         articles.then((articles) => {
             articles.forEach((article) => {
-                const articleObject = new Article({
-                    _id: article._id,
-                    summary: article.summary,
-                    country: article.country,
-                    author: article.author,
-                    link: article.link,
-                    language: article.language,
-                    media: article.media,
-                    title: article.title,
-                    media_content: article.media_content,
-                    clean_url: article.clean_url,
-                    rights: article.rights,
-                    rank: article.rank,
-                    topic: article.topic,
-                    published_date: Date(article.published_date),
-                    _score: article._score,
-                });
-                // save article
-                articleObject
-                    .save()
-                    .then((data) => {
-                        console.log("entry saved");
-                    })
-                    .catch((err) => {
-                        res.status(500).send({
-                            message:
-                                err.message || "Some error occurred while creating the Note.",
-                        });
+                if (article.country === "IN") {
+                    const articleObject = new Article({
+                        _id: article._id,
+                        summary: article.summary,
+                        country: article.country,
+                        author: article.author,
+                        link: article.link,
+                        language: article.language,
+                        media: article.media,
+                        title: article.title,
+                        media_content: article.media_content,
+                        clean_url: article.clean_url,
+                        rights: article.rights,
+                        rank: article.rank,
+                        topic: article.topic,
+                        published_date: Date(article.published_date),
+                        _score: article._score,
                     });
+                    // save article
+                    articleObject
+                        .save()
+                        .then((data) => {
+                            console.log("entry saved");
+                        })
+                        .catch((err) => {
+                            res.status(500).send({
+                                message:
+                                    err.message || "Some error occurred while creating the Note.",
+                            });
+                        });
+                }
             });
         })
             .catch((error) => {
