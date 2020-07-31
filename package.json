@@ -23,5 +23,6 @@
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.26",
     "twit": "^2.2.11"
-  }
+  },
+  "devDependencies": {}
 }
