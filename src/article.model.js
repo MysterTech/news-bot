@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ArticleSchema = mongoose.Schema(
   {
-    _id: mongoose.Schema.Types.ObjectId,
+    _id: String,
     summary: String,
     country: String,
     author: String,
