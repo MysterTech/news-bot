@@ -72,6 +72,7 @@ exports.postNews = async () => {
         mongoose.disconnect().then(console.log("database disconnected"));
     } catch (error) {
         console.log("cant connect to database. Due to error :");
+        console.log(Date.now());
         console.log(error);
     }
 }
