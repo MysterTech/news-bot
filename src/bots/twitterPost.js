@@ -4,13 +4,12 @@ const Article = require("../article.model");
 
 exports.postNews = async () => {
     mongoose.set('useUnifiedTopology', true);
-    mongoose.set("useNewUrlParser", true);
     try {
-        await mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true });
+        await mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+        console.log("database connected");
         mongoose.Promise = global.Promise;
         const db = mongoose.connection;
         db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-        console.log("database connected")
 
         console.log("looping through " + 21 + " pages");
         for (let index = 1; index <= 100; index++) {
