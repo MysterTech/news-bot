@@ -6,7 +6,7 @@ exports.postNews = async () => {
     mongoose.set('useUnifiedTopology', true);
     mongoose.set("useNewUrlParser", true);
     try {
-        await mongoose.connect(process.env.MONGO_URI);
+        await mongoose.connect(process.env.MONGO_URI, { useUnifiedTopology: true, useNewUrlParser: true });
         mongoose.Promise = global.Promise;
         const db = mongoose.connection;
         db.on('error', console.error.bind(console, 'MongoDB connection error:'));
